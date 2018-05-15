@@ -17,8 +17,7 @@ Class Login extends CI_Controller {
     public function index() {
         if (isset($this->session->userdata['logged_in']) &&
                 $this->session->userdata['logged_in']){
-            // TODO redirect to the game
-            show_error('Nope yet');
+            redirect('/game/index');
         }
         if($this->input->method() == 'post') {
             $this->logUser();
@@ -44,25 +43,14 @@ Class Login extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
-            if(isset($this->session->userdata['logged_in'])){
-                // TODO redirect to the game
-                show_error('Nope yet');
-            }else{
-                $this->redirectToLoginForm();
-            }
+            $this->redirectToLoginForm();
         } else {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $result = $this->UserModel->login($username, $password);
             if ($result) {
-                $session_data = array(
-                    'username' => $username,
-                );
-                $this->session->set_userdata('logged_in', $session_data);
-
-                // TODO redirect to the game
-                show_error('Nope yet');
-
+                $this->session->set_userdata('logged_in', array('username' => $username));
+                redirect('/game/index');
             } else {
                 $data = array(
                     'error_message' => 'Invalid Username or Password'

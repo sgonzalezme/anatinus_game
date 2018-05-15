@@ -3,13 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de control</title>
+    <title>Anatinus</title>
 
 	<!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="/public/theme-sb-admin-2/vendor/bootstrap/css/bootstrap.css" >
-
-    <!-- MetisMenu CSS -->
-<!--     <link hrel="stylesheet" type="text/css" href="/public/theme-sb-admin-2/vendor/metisMenu/metisMenu.min.css" > -->
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/public/theme-sb-admin-2/dist/css/sb-admin-2.css" >
