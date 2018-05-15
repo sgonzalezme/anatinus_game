@@ -30,10 +30,7 @@ Class Login extends CI_Controller {
     }
 
     public function logout() {
-        $sess_array = array(
-            'username' => ''
-        );
-        $this->session->unset_userdata('logged_in', $sess_array);
+        $this->session->unset_userdata('logged_in');
         redirect('/login/index');
     }
 
@@ -47,9 +44,9 @@ Class Login extends CI_Controller {
         } else {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
-            $result = $this->UserModel->login($username, $password);
-            if ($result) {
-                $this->session->set_userdata('logged_in', array('username' => $username));
+            $user_id = $this->UserModel->login($username, $password);
+            if ($user_id) {
+                $this->session->set_userdata('logged_in', array('username' => $username, 'user_id' => $user_id));
                 redirect('/game/index');
             } else {
                 $data = array(

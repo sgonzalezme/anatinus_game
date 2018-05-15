@@ -4,7 +4,6 @@ Class Register extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->library('form_validation');
@@ -14,10 +13,8 @@ Class Register extends CI_Controller {
 
     public function index() {
         if(isset($this->session->userdata['logged_in'])) {
-            // TODO redirect to the game
-            show_error('Nope yet');
+            redirect('/game/index');
         }
-
         if($this->input->method() == 'post') {
             $this->registerNewUser();
         } else {
@@ -27,7 +24,6 @@ Class Register extends CI_Controller {
             $this->load->view('templates/footer');
         }
     }
-
 
     private function registerNewUser() {
         $this->form_validation->set_rules('username', 'Username', 'trim|required');

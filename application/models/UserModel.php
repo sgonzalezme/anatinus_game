@@ -27,7 +27,11 @@ class UserModel extends CI_Model {
         } else{
             $hashed_password = $result->password;
             $password_check = password_verify($password, $hashed_password);
-            return $password_check;
+            if($password_check){
+                return $result->user_id;
+            } else {
+                return false;
+            }
         }
     }
 
