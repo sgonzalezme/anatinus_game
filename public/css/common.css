@@ -1,13 +1,3 @@
-.notifyjs-happyblue-base {
-    white-space: nowrap;
-    background: #F5F5F5;
-    padding: 5px;
-}
-.notifyjs-happyblue-superblue {
-    color: white;
-    background: #ff5500;
-    border-radius: 10px;
-}
 .picture{
     object-fit: cover;
     width:250px;
