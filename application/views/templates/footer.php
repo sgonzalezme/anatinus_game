@@ -1,8 +1,11 @@
+                <!-- /.col-lg-12 -->
+                </div>
+            <!-- /.row -->
+            </div>
 
-<!-- /.container-fluid -->
+        <!-- /.container-fluid -->
         </div>
-<!-- /#page-wrapper -->
-
+    <!-- /#page-wrapper -->
     </div>
 <!-- /#wrapper -->
 

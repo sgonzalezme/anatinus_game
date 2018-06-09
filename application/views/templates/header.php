@@ -35,4 +35,15 @@
 		<!-- Page Content -->
 	<div id="page-wrapper clearfix">
 		<div class="container-fluid">
+            <?php if(isset($this->session->userdata['logged_in'])) { ?>
+                <div class="list-group row left col-sm-3 col-md-2">
+                    <p class="list-group-item active">Game</p>
+                    <a href="<?php echo site_url('/game/index')?>" class="list-group-item">Start a new game</a>
+                    <a href="<?php echo site_url('/gallery/index')?>" class="list-group-item">Check the gallery</a>
+                    <p class="list-group-item active">Results</p>
+                    <a href="<?php echo site_url('/results/index')?>" class="list-group-item">Game results</a>
+                </div>
+            <?php } ?>
 
+            <div class="row">
+                <div class="left col-sm-9 col-md-10">
