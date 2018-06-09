@@ -35,6 +35,19 @@ class UserModel extends CI_Model {
         }
     }
 
+    public function getUserById($user_id){
+        $sql = 'SELECT * FROM user
+				WHERE user_id = ?';
+        $statement = $this->db->query($sql, array($user_id));
+        $result = $statement->result_array();
 
-	
+        if($result){
+            return $result[0];
+        }
+    }
+
+
+
+
+
 }
