@@ -14,6 +14,7 @@
             <th scope="col">Right answers</th>
             <th scope="col">Wrong answers</th>
             <th scope="col">Result (over 10)</th>
+            <th scope="col">Summary</th>
             <th scope="col">Date</th>
         </tr>
         </thead>
@@ -27,6 +28,21 @@
             <td><?php echo $game['right_answers'] ?></td>
             <td><?php echo $game['wrong_answers'] ?></td>
             <td><?php echo ($game['right_answers'] / $game['num_questions']) * 10 ?></td>
+            <td>
+                <ul>
+                <?php
+                    $summary = explode(',', $game['summary']);
+                    foreach ($summary as $answer){
+                        $answer_and_result = explode('-', $answer);
+                        if($answer_and_result[1]){
+                            echo "<li> {$answer_and_result[0]} <i class=\"text-success fa fa-check\"></i> </li>";
+                        } else{
+                            echo "<li> {$answer_and_result[0]} <i class=\"text-danger fa fa-times\"></i> </li>";
+                        }
+                    }
+                ?>
+                </ul>
+            </td>
             <td><?php echo $game['created_at'] ?></td>
         </tr>
     <?php } ?>
