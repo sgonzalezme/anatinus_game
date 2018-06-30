@@ -33,5 +33,27 @@ class Results extends CI_Controller {
         $this->load->view('templates/footer');
 	}
 
+    public function stats(){
+        if (!isset($this->session->userdata['logged_in']) ||
+            !$this->session->userdata['logged_in']){
+            redirect('/login/index');
+        }
+        /** @var array $connected_user */
+        $connected_user = $this->session->userdata('logged_in');
+        /** @var array $user */
+        $user = $this->UserModel->getUserById($connected_user['user_id']);
+        /** @var array $stats */
+        $stats = $this->GameModel->getResultsByEmotion($user['user_id']);
+
+        $data = array(
+            'stats'     => $stats,
+            'username'  => $user['username']
+        );
+        $this->load->view('templates/head_common');
+        $this->load->view('templates/header');
+        $this->load->view('results/stats', $data);
+        $this->load->view('templates/footer');
+    }
+
 
 }

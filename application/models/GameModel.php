@@ -49,5 +49,19 @@ class GameModel extends CI_Model {
         return $games;
     }
 
+    public function getResultsByEmotion($user_id) {
+        $sql = 'SELECT distinct game_emotion.emotion,
+				sum(result) as right_answers,
+				count(result) as total
+				FROM game_emotion
+				LEFT JOIN user on game_emotion.user_id = user.user_id
+				WHERE user.active is true and user.user_id = ?
+				group by emotion';
+        $stmt = $this->db->query ( $sql, array($user_id));
+        $stats = $stmt->result_array();
+
+        return $stats;
+    }
+
 
 }

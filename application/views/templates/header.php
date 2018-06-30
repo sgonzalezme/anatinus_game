@@ -42,6 +42,7 @@
                     <a href="<?php echo site_url('/gallery/index')?>" class="list-group-item">Check the gallery</a>
                     <p class="list-group-item active">Results</p>
                     <a href="<?php echo site_url('/results/index')?>" class="list-group-item">Game results</a>
+                    <a href="<?php echo site_url('/results/stats')?>" class="list-group-item">Game stats</a>
                 </div>
             <?php } ?>
 
