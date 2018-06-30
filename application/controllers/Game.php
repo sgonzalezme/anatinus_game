@@ -9,6 +9,7 @@ Class Game extends CI_Controller {
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->model('PictureModel');
+        $this->load->model('ConfigurationModel');
         $this->load->model('GameModel');
     }
 
@@ -78,7 +79,11 @@ Class Game extends CI_Controller {
                 );
             }
 
-            $this->GameModel->saveScore($user['user_id'], $right_answers, $total_questions);
+            $game_id = $this->GameModel->saveScore($user['user_id'], $right_answers, $total_questions);
+
+            foreach ($results as $key => $result){
+                $this->GameModel->saveAnswer($result['image'], $result['answered'], $game_id, ($key+1), $user['user_id'], $result['result']);
+            }
 
             $data = array(
                 'options' => $game,
@@ -98,7 +103,7 @@ Class Game extends CI_Controller {
     }
 
     private function getAnswersArray($right_answer){
-        $all_sorted_emotions = EMOTIONS;
+        $all_sorted_emotions = $this->ConfigurationModel->getAvailableEmotions();
         shuffle($all_sorted_emotions);
         $sorted_emotions = array_slice($all_sorted_emotions, 0, self::NUM_ANSWERS);
 
