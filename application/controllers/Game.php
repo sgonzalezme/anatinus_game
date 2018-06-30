@@ -73,6 +73,7 @@ Class Game extends CI_Controller {
                     $right_answers++;
                 }
                 $results[$position] = array(
+                    'image_id' => $question['image']['img_id'],
                     'image' => $image_emotion,
                     'answered' => $answered_emotion,
                     'result' => $result
@@ -82,7 +83,7 @@ Class Game extends CI_Controller {
             $game_id = $this->GameModel->saveScore($user['user_id'], $right_answers, $total_questions);
 
             foreach ($results as $key => $result){
-                $this->GameModel->saveAnswer($result['image'], $result['answered'], $game_id, ($key+1), $user['user_id'], $result['result']);
+                $this->GameModel->saveAnswer($result['image'], $result['answered'], $game_id, $result['image_id'], ($key+1), $user['user_id'], $result['result']);
             }
 
             $data = array(

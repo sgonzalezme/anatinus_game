@@ -6,11 +6,11 @@ class GameModel extends CI_Model {
         parent::__construct();
     }
 
-    public function saveAnswer($emotion, $answer, $game_id, $question_number, $user_id, $result){
+    public function saveAnswer($emotion, $answer, $game_id, $image_id, $question_number, $user_id, $result){
         $sql = 'INSERT INTO game_emotion
-				( emotion, answer, game_id, question_id, user_id, result )
-				VALUES (?, ?, ?, ?, ?, ?)';
-        $this->db->query ( $sql, array($emotion, $answer, $game_id, $question_number, $user_id, boolval($result)));
+				( emotion, answer, game_id, image_id, question_id, user_id, result )
+				VALUES (?, ?, ?, ?, ?, ?, ?)';
+        $this->db->query ( $sql, array($emotion, $answer, $game_id, $image_id, $question_number, $user_id, boolval($result)));
 
         return  $this->db->insert_id();
     }
