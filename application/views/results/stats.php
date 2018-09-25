@@ -21,7 +21,12 @@
             <td><?php echo $stat['emotion'] ?></td>
             <td><?php echo $stat['right_answers'] ?></td>
             <td><?php echo $stat['total'] ?></td>
-            <td><?php echo ($stat['right_answers'] / $stat['total']) * 10 ?></td>
+            <td>
+                <?php
+                $result = ($stat['right_answers'] / $stat['total']) * 10;
+                echo number_format($result, 2)
+                ?>
+            </td>
         </tr>
     <?php } ?>
         </tbody>

@@ -8,3 +8,6 @@
     width:450px;
     height:450px;
 }
+body,button,.btn{
+    font-size: x-large;
+}

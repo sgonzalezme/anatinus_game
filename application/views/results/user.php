@@ -27,7 +27,11 @@
             <td><?php echo $game['num_questions'] ?></td>
             <td><?php echo $game['right_answers'] ?></td>
             <td><?php echo $game['wrong_answers'] ?></td>
-            <td><?php echo ($game['right_answers'] / $game['num_questions']) * 10 ?></td>
+            <td><?php
+                $result = ($game['right_answers'] / $game['num_questions']) * 10;
+                echo number_format($result, 2)
+                ?>
+            </td>
             <td>
                 <ul>
                 <?php

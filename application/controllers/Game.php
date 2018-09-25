@@ -68,7 +68,7 @@ Class Game extends CI_Controller {
             foreach ($game as $position => $question) {
                 $image_emotion = $question['image']['emotion'];
                 $answered_emotion = $answers["answer_$position"];
-                $result = strcmp($answered_emotion, $image_emotion) == 0;
+                $result = strcasecmp($answered_emotion, $image_emotion) == 0;
                 if($result){
                     $right_answers++;
                 }
