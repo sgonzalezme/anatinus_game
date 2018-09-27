@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anatinus</title>
 
-	<!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="/public/theme-sb-admin-2/vendor/bootstrap/css/bootstrap.css" >
+    <script type="text/javascript" src="/public/js/jquery-3.3.1.min.js" ></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/public/theme-sb-admin-2/dist/css/sb-admin-2.css" >
+    <!-- Font awesome: for checks and symbols -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css" >
+    <script type="text/javascript" src="/public/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="/public/js/bootstrap.bundle.min.js" ></script>
+
+    <!-- Datatables plugin -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" >
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+
+    <!-- Custom styles and functions -->
     <link rel="stylesheet" type="text/css" href="/public/css/common.css" >
-
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" type="text/css" href="/public/theme-sb-admin-2/vendor/font-awesome/css/font-awesome.min.css" >
-    
-    <script type="text/javascript" src="/public/theme-sb-admin-2/vendor/jquery/jquery-3.2.0.min.js" ></script>
-    <script type="text/javascript" src="/public/theme-sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="/public/theme-sb-admin-2/vendor/metisMenu/metisMenu.min.js" ></script>
-    <script type="text/javascript" src="/public/theme-sb-admin-2/dist/js/sb-admin-2.js" ></script>
-    
-    <script type="text/javascript" src="/public/theme-sb-admin-2/vendor/datatables/js/jquery.dataTables.min.js" ></script>
-    <script type="text/javascript" src="/public/theme-sb-admin-2/vendor/datatables-plugins/dataTables.bootstrap.min.js" ></script>
-    <script type="text/javascript" src="/public/theme-sb-admin-2/vendor/datatables-responsive/dataTables.responsive.js" ></script>
-    
     <script type="text/javascript" src="/public/js/base.js" ></script>
