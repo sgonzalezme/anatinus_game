@@ -58,34 +58,6 @@ class ConfigurationModel extends CI_Model {
         return $config;
 	}
 
-	public function getApiKey() {
-		$sql = 'SELECT value
-				FROM configuration
-				WHERE configuration.path = "api_key"';
-		$stmt = $this->db->query ( $sql );
-        $config = $stmt->result_array();
-
-        if($config){
-            $config = $config[0]['value'];
-        }
-
-        return $config;
-	}
-
-	public function getApiUrl() {
-		$sql = 'SELECT value
-				FROM configuration
-				WHERE configuration.path = "api_url"';
-		$stmt = $this->db->query ( $sql );
-        $config = $stmt->result_array();
-
-        if($config){
-            $config = $config[0]['value'];
-        }
-
-        return $config;
-	}
-
     public function getAvailableEmotions() {
         $sql = 'SELECT value
 				FROM configuration
@@ -100,7 +72,5 @@ class ConfigurationModel extends CI_Model {
 
         return $config;
     }
-
-
 	
 }
